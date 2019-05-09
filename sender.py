@@ -16,5 +16,3 @@ with open("credentials.json", "r") as creds_file:
     msg = input("Type the message to send: ")
     username = input("Type the twitter handle of the user to send the message to: ")
     send_msg = api.PostDirectMessage(msg, user_id=None, screen_name=username)
-
-    print(send_msg)
