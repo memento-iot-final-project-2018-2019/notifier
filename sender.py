@@ -13,8 +13,8 @@ with open("credentials.json", "r") as creds_file:
                     access_token_key=oauth_token,
                     access_token_secret=oauth_token_secret)
 
-    msg = input("Type the message to send: ")
-    username = input("Type the twitter handle of the user to send the message to: ")
+    msg = "Remember to LOCK the door!"
+    username = "username-goes-here"
     send_msg = api.PostDirectMessage(msg, user_id=None, screen_name=username)
 
     # check out omxplayer for sound

@@ -1,31 +1,13 @@
-from multiprocessing import Process
-import subprocess
-import time
+from omxplayer.player import OMXPlayer
+from pathlib import Path
+from time import sleep
 
-DEBUG = True
+AUDIO_PATH = Path("sound.mp3")
 
-def play_alarm():
-    bashCommand = "omxplayer --loop sound.mp3"
-    omx_sub_process = subprocess.run(bashCommand, shell = True)
-    time.sleep(5)
-    bashCommand = "pkill -SIGINT omxplayer.bin"
-    omx_terminator = subprocess.Popen(bashCommand, shell = True)
-    omx_terminator.wait()
+player = OMXPlayer(AUDIO_PATH, args=['--no-osd', '--no-keys', '--loop'])
 
+player.play()
 
-#kill_alarm = False
-# This will be called when the proximity sensor detects 
-play_process = Process(target = play_alarm)
-play_process.daemon = True
-play_process.start()
-
-if DEBUG:
-    print(play_process.pid)
-
-time.sleep(5)
-
-#while not(kill_alarm):
-#    c = "1"
-    #wait for rfid check
-
-#play_process.terminate()
+# WAIT For RFID TAG TO KILL ALARM
+sleep(5)
+player.quit()
