@@ -8,12 +8,22 @@ sudo apt-get install python3-dev python3-venv
 python3 -m venv env
 ```
 
+
 activate it
 ```
 source env/bin/activate
 ```
 
-and install the `python-twitter` package: 
+Install `omxplayer-wrapper` package and its dependencies
+```
+sudo apt-get update && sudo apt-get install -y libdbus-1{,-dev}
+```
+
+```
+pip install omxplayer-wrapper
+```
+
+and install the `python-twitter` package:
 ```
 pip install python-twitter
 ```
