@@ -20,20 +20,19 @@ if INIT_TAG:
     finally:
         GPIO.cleanup()
 
-AUDIO_PATH = Path("sound.m4a")
-
 kill_alert = False
-
 door_open = True
 
+AUDIO_PATH = Path("sound.mp3")
 player = OMXPlayer(AUDIO_PATH, args=['--no-osd', '--no-keys', '--loop'])
+
 player.pause()
 
 while True:
     kill_alert = False
-    #####################
-    ##CHECK PROX SENSORS#
-    #####################
+    ###########################
+    ##CHECK PROX SENSORS, TODO#
+    ###########################
     if door_open and kill_alert == False:
         print("Starting alert")
         player.play()
@@ -43,4 +42,4 @@ while True:
         finally:
             GPIO.cleanup()
         player.pause()
-        time.sleep(60)
+        time.sleep(20)
