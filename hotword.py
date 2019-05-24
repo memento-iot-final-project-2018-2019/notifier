@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 # Copyright (C) 2017 Google Inc.
+# Modifications copyright (C) 2019 Gabriele Cervelli, Giovanni De Luca
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -28,6 +29,11 @@ from google.assistant.library.event import EventType
 from google.assistant.library.file_helpers import existing_file
 from google.assistant.library.device_helpers import register_device
 
+import time
+import board
+import busio
+import adafruit_vcnl4040
+
 import faulthandler
 faulthandler.enable()
 
@@ -54,6 +60,10 @@ WARNING_NOT_REGISTERED = """
     https://developers.google.com/assistant/sdk/guides/library/python/embed/register-device
 """
 
+# Setting up the proximity sensor
+prox_treshehold = 10.0
+i2c = busio.I2C(board.SCL, board.SDA)
+sensor = adafruit_vcnl4040.VCNL4040(i2c)
 
 def process_event(event):
     """Pretty prints events.
@@ -80,11 +90,10 @@ def process_event(event):
                 player.pause();
 
                 kill_alert = False
-                door_open = True ## INIT TO FALSE WHEN PROXIMITY IMPLEMENTED
+                door_open = False 
                 while params['on'] and kill_alert == False:
-                    ###########################
-                    ##CHECK PROX SENSORS, TO DO##
-                    ###########################
+                    # Check on the sensor
+                    door_open = sensor.proximity <= prox_treshehold
                     if door_open:
                         print("Starting alert")
                         player.play()
