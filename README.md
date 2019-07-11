@@ -29,6 +29,10 @@ The notifier is written to be imported in an Amazon AWS Lambda function (at thi 
 
 If you want to activate the Lambda function using an IoT product, we suggest to use Amazon AWS Iot Core (aws iot core documentation), that would be set as the trigger of the function.
 
-We suggest to set your project to send an MQTT request to AWS in order to trigger the Lambda function.
+We suggest to set your project to send an MQTT request to AWS in order to trigger the Lambda function. The payload of the MQTT request has to be the Twitter account's 'USER ID' of the receivede of the message (if you own a Twitter account, you can check your ID at this link: https://twitter.com/settings/your_twitter_data).
+
+You can change the message to be send modifiend the variable `msg` in the file `notifier.py`.
 
 You can read more accurate details about how we developed our MEmento project at this link: <inserire link del blog>
+    
+N.B. In order to use this notifier, the user should own a Twitter account. 
