@@ -38,6 +38,6 @@ N.B. In order to use this notifier, the user should own a Twitter account.
 
 # Authors
 * Linkedin:
-	* [Gabriele Cervelli](https://www.linkedin.com/in/<inserire user>/)
+	* [Gabriele Cervelli](https://www.linkedin.com/in/gabriele-cervelli-88406b181/)
 	* [Giovanni De Luca](https://www.linkedin.com/in/gdlroma/)
-	* [Antonino Di Maggio](https://www.linkedin.com/in/gabriele-cervelli-88406b181/)
+	* [Antonino Di Maggio](https://www.linkedin.com/in/antonino-di-maggio-216479143/)
