@@ -10,7 +10,7 @@ pip install TwitterAPI
 
 ```
 
-You can check the dependencies and the documentation for the `TwitterAPI` library at this link: https://github.com/geduldig/TwitterAPI .
+You can check the dependencies and the documentation for the `TwitterAPI` library out at this link: https://github.com/geduldig/TwitterAPI .
 
 
 
@@ -25,13 +25,13 @@ Also remember to create a `credentials.json` file in the root folder of the repo
 }
 ```
 
-The notifier is written to be imported in an Amazon AWS Lambda function (at thi link is provided the description, documentation and tutorial for AWS Lambda: https://aws.amazon.com/lambda/?nc1=f_ls).
+The notifier is meant to be imported in an Amazon AWS Lambda function (check this link out for the AWS Lambda description, documentation and tutorial: https://aws.amazon.com/lambda/?nc1=f_ls).
 
-If you want to activate the Lambda function using an IoT product, we suggest to use Amazon AWS Iot Core (aws iot core documentation), that would be set as the trigger of the function.
+If you want to activate the Lambda function using an IoT product, we suggest to use [Amazon AWS Iot Core](https://docs.aws.amazon.com/iot/index.html). AWS IoT Core is used to trigger a function on AWS Lambda.
 
-We suggest to set your project to send an MQTT request to AWS in order to trigger the Lambda function. The payload of the MQTT request has to be the Twitter account's 'USER ID' of the receivede of the message (if you own a Twitter account, you can check your ID at this link: https://twitter.com/settings/your_twitter_data).
+The payload of the MQTT message sent to IoT Core has to be the user's Twitter account's ID (if you own a Twitter account, you can check your ID at this link: https://twitter.com/settings/your_twitter_data).
 
-You can change the message to be send modifying the variable `msg` in the file `notifier.py`.
+You can change the message to be sent by modifying the variable `msg` in the file `notifier.py`.
 
 You can read more accurate details about how we developed our MEmento project at this link: <inserire link del blog>
     
