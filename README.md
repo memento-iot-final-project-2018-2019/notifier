@@ -33,7 +33,7 @@ The payload of the MQTT message sent to IoT Core has to be the user's Twitter ac
 You can change the message to be sent by modifying the variable `msg` in the file `notifier.py`.
 
 You can read more accurate details about how we developed our MEmento project at this link: <inserire link del blog>
-    
+
 N.B. In order to use this notifier, the user should own a Twitter account. 
 
 # Authors
@@ -41,3 +41,7 @@ N.B. In order to use this notifier, the user should own a Twitter account.
 	* [Gabriele Cervelli](https://www.linkedin.com/in/gabriele-cervelli-88406b181/)
 	* [Giovanni De Luca](https://www.linkedin.com/in/gdlroma/)
 	* [Antonino Di Maggio](https://www.linkedin.com/in/antonino-di-maggio-216479143/)
+* Twitter:
+	* [Gabriele Cervelli](https://twitter.com/polyc_line)
+	* [Giovanni De Luca](https://twitter.com/josuke_miyazawa)
+	* [Antonino Di Maggio](https://twitter.com/DmAntonino)
